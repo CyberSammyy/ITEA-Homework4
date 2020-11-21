@@ -188,11 +188,28 @@ namespace ITEA_Homework4
         {
             Console.WriteLine("First matrix:");
             int[,] matrix_1 = MatrixFiller();
-            Show(MatrixByMatrixMultiplication(matrix_1));
-            Show(MatrixByNumberMultiplication(matrix_1));
-            Show(MatrixAddition(matrix_1));
-            Show(MatrixToPower(matrix_1));
-            Show(MatrixTransposing(matrix_1));
+            Console.WriteLine("What do you want to do? 1 - Multiply matrix by matrix, 2 - Matrix by a number, 3 - Add two matrixes, 4 - GIVE MATRIX A POOOWEEEER, 5 - Transpose matrix");
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Show(MatrixByMatrixMultiplication(matrix_1));
+                    return;
+                case "2":
+                    Show(MatrixByNumberMultiplication(matrix_1));
+                    return;
+                case "3":
+                    Show(MatrixAddition(matrix_1));
+                    return;
+                case "4":
+                    Show(MatrixToPower(matrix_1));
+                    return;
+                case "5":
+                    Show(MatrixTransposing(matrix_1));
+                    return;
+                default:
+                    Console.WriteLine("Incorrect input.");
+                    return;
+            }
         }
     }
 }
